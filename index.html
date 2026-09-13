@@ -3,8 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Groot's Garden | Maine Homestead</title>
+
+  <title>Groots Garden | Growing a Maine Homestead from the Ground Up</title>
+
+  <meta
+    name="description"
+    content="Follow Tara and Groot as they build Groots Garden, a Maine homestead growing vegetables, herbs, seedlings, handmade goods, and plenty of lessons along the way."
+  >
+
+  <!-- Soft, organic fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap"
+    rel="stylesheet"
+  >
+
   <style>
+    :root {
+      --forest: #24392c;
+      --deep-forest: #17271d;
+      --sage: #7f9279;
+      --soft-sage: #dfe6d9;
+      --cream: #f6f1e6;
+      --warm-white: #fffdf8;
+      --clay: #9a6d4b;
+      --brown: #654c39;
+      --gold: #c1a36e;
+      --text: #324137;
+      --muted: #68736b;
+    }
+
     * {
       box-sizing: border-box;
     }
@@ -15,263 +44,554 @@
 
     body {
       margin: 0;
-      font-family: Georgia, "Times New Roman", serif;
-      color: #24352b;
-      background: #faf8f1;
-      line-height: 1.6;
+      background: var(--cream);
+      color: var(--text);
+      font-family: "DM Sans", Arial, sans-serif;
+      line-height: 1.75;
     }
 
+    img {
+      display: block;
+      width: 100%;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: "Fraunces", Georgia, serif;
+      font-weight: 600;
+      line-height: 1.08;
+      margin-top: 0;
+    }
+
+    p {
+      margin-top: 0;
+    }
+
+    /* -------------------------
+       NAVIGATION
+    ------------------------- */
+
     header {
-      background: #183b2b;
-      color: white;
-      padding: 18px 6%;
-      position: sticky;
+      position: absolute;
       top: 0;
-      z-index: 10;
+      left: 0;
+      width: 100%;
+      z-index: 20;
     }
 
     nav {
-      max-width: 1100px;
+      max-width: 1200px;
       margin: auto;
+      padding: 24px 6%;
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
       gap: 25px;
     }
 
-    .logo {
-      font-size: 1.5rem;
-      font-weight: bold;
-    }
-
-    nav a {
+    .brand {
       color: white;
       text-decoration: none;
-      margin-left: 20px;
-      font-family: Arial, sans-serif;
-      font-size: .9rem;
+      font-family: "Fraunces", Georgia, serif;
+      font-size: 1.45rem;
+      font-weight: 600;
+      letter-spacing: .2px;
     }
 
-    .hero {
-      min-height: 75vh;
+    .nav-links {
       display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 80px 20px;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
       color: white;
-      background:
-        linear-gradient(rgba(24,59,43,.78), rgba(24,59,43,.78)),
-        linear-gradient(135deg, #496f53, #142b20);
+      text-decoration: none;
+      font-size: .88rem;
+      font-weight: 500;
+      letter-spacing: .5px;
+    }
+
+    .nav-links a:hover {
+      opacity: .75;
+    }
+
+    /* -------------------------
+       HERO
+    ------------------------- */
+
+    .hero {
+      min-height: 88vh;
+      display: flex;
+      align-items: end;
+      position: relative;
+      color: white;
+      background-image:
+        linear-gradient(
+          90deg,
+          rgba(18, 34, 24, .78) 0%,
+          rgba(18, 34, 24, .55) 42%,
+          rgba(18, 34, 24, .18) 72%,
+          rgba(18, 34, 24, .20) 100%
+        ),
+        url("images/20260711_061003.jpg");
+
+      background-size: cover;
+      background-position: center 43%;
+    }
+
+    .hero-inner {
+      width: 100%;
+      max-width: 1200px;
+      margin: auto;
+      padding: 170px 6% 95px;
     }
 
     .hero-content {
-      max-width: 800px;
+      max-width: 680px;
     }
 
     .eyebrow {
+      display: inline-block;
+      margin-bottom: 15px;
+      color: #e7dcc3;
+      font-size: .78rem;
+      font-weight: 600;
+      letter-spacing: 3px;
       text-transform: uppercase;
-      letter-spacing: 4px;
-      font-family: Arial, sans-serif;
-      font-size: .75rem;
-      color: #d7c28f;
-      font-weight: bold;
     }
 
-    h1 {
-      font-size: clamp(3rem, 8vw, 6rem);
-      line-height: 1;
-      margin: 15px 0 25px;
+    .hero h1 {
+      font-size: clamp(3.4rem, 8vw, 6.8rem);
+      margin-bottom: 22px;
+      color: white;
+      letter-spacing: -2px;
     }
 
     .hero p {
+      max-width: 600px;
       font-size: 1.15rem;
-      max-width: 650px;
-      margin: auto;
+      color: rgba(255,255,255,.92);
     }
 
     .button {
       display: inline-block;
-      margin-top: 30px;
-      padding: 13px 25px;
-      background: #e9dfc5;
-      color: #183b2b;
+      margin-top: 22px;
+      padding: 13px 24px;
+      border-radius: 100px;
+      background: var(--cream);
+      color: var(--deep-forest);
       text-decoration: none;
-      border-radius: 30px;
-      font-family: Arial, sans-serif;
-      font-weight: bold;
+      font-weight: 600;
+      transition: .2s ease;
     }
 
-    section {
-      padding: 85px 6%;
+    .button:hover {
+      transform: translateY(-2px);
+      background: white;
+    }
+
+    .button-dark {
+      background: var(--forest);
+      color: white;
+    }
+
+    /* -------------------------
+       GENERAL LAYOUT
+    ------------------------- */
+
+    .section {
       max-width: 1150px;
       margin: auto;
+      padding: 100px 6%;
     }
 
-    .intro {
-      display: grid;
-      grid-template-columns: 1fr 1.5fr;
-      gap: 60px;
-    }
-
-    h2 {
-      font-size: 2.8rem;
-      line-height: 1.1;
-      color: #183b2b;
-      margin-top: 0;
-    }
-
-    .intro p {
-      color: #5d685f;
-      font-size: 1.05rem;
-    }
-
-    .garden {
+    .section-wide {
       max-width: none;
-      background: #e8eee3;
+      padding: 100px 6%;
     }
 
-    .section-inner {
-      max-width: 1050px;
-      margin: auto;
+    .section-label {
+      color: var(--clay);
+      font-size: .78rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      margin-bottom: 12px;
     }
 
-    .center {
+    .section-title {
+      font-size: clamp(2.7rem, 5vw, 4.3rem);
+      color: var(--forest);
+      margin-bottom: 28px;
+    }
+
+    /* -------------------------
+       STORY
+    ------------------------- */
+
+    .story-grid {
+      display: grid;
+      grid-template-columns: .85fr 1.15fr;
+      gap: 75px;
+      align-items: center;
+    }
+
+    .story-image {
+      position: relative;
+    }
+
+    .story-image img {
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      border-radius: 4px 45px 4px 45px;
+      box-shadow: 18px 18px 0 var(--soft-sage);
+    }
+
+    .story-copy p {
+      font-size: 1.04rem;
+      color: #536158;
+    }
+
+    .story-copy strong {
+      color: var(--forest);
+    }
+
+    /* -------------------------
+       QUOTE STRIP
+    ------------------------- */
+
+    .quote-strip {
+      background: var(--forest);
+      color: white;
       text-align: center;
+      padding: 70px 8%;
+    }
+
+    .quote-strip p {
+      max-width: 850px;
+      margin: auto;
+      font-family: "Fraunces", Georgia, serif;
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      line-height: 1.25;
+    }
+
+    .quote-strip span {
+      display: block;
+      margin-top: 18px;
+      color: #d4c7aa;
+      font-family: "DM Sans", Arial, sans-serif;
+      font-size: .8rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    /* -------------------------
+       MEET GROOT
+    ------------------------- */
+
+    .groot-section {
+      background: #e8ecdf;
+    }
+
+    .groot-grid {
+      max-width: 1150px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .groot-photo img {
+      height: 580px;
+      object-fit: cover;
+      object-position: center 35%;
+      border-radius: 50% 50% 8px 8px / 18% 18% 8px 8px;
+    }
+
+    .groot-copy p {
+      color: #566258;
+      font-size: 1.04rem;
+    }
+
+    /* -------------------------
+       BUILDING THE HOMESTEAD
+    ------------------------- */
+
+    .build-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 45px;
+      align-items: center;
+    }
+
+    .build-photo img {
+      height: 470px;
+      object-fit: cover;
+      border-radius: 30px 4px 30px 4px;
+    }
+
+    .build-copy {
+      padding: 20px;
+    }
+
+    .build-copy p {
+      color: #5e6962;
+    }
+
+    /* -------------------------
+       WHAT'S GROWING
+    ------------------------- */
+
+    .growing {
+      background: var(--warm-white);
+    }
+
+    .growing-header {
+      max-width: 760px;
+      margin-bottom: 45px;
     }
 
     .cards {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 18px;
-      margin-top: 40px;
     }
 
     .card {
-      background: #fffdf8;
-      padding: 28px 22px;
-      border: 1px solid #d6ddd3;
-      border-radius: 14px;
+      background: var(--cream);
+      padding: 28px;
+      border: 1px solid #e4ddcf;
+      border-radius: 18px;
     }
 
-    .card-icon {
-      font-size: 2.2rem;
+    .card-number {
+      color: var(--clay);
+      font-family: "Fraunces", serif;
+      font-size: 1.3rem;
     }
 
     .card h3 {
-      color: #28553d;
-      margin-bottom: 8px;
+      color: var(--forest);
+      margin: 12px 0 8px;
+      font-size: 1.5rem;
     }
 
     .card p {
       color: #68736b;
-      font-family: Arial, sans-serif;
-      font-size: .9rem;
+      font-size: .92rem;
+      margin-bottom: 0;
     }
 
-    .goods {
+    /* -------------------------
+       HARVEST
+    ------------------------- */
+
+    .harvest-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
-      margin-top: 35px;
-    }
-
-    .goods div {
-      padding: 25px;
-      border-top: 3px solid #28553d;
-    }
-
-    .goods span {
-      display: block;
-      font-size: 2rem;
-      margin-bottom: 8px;
-    }
-
-    .journal {
-      max-width: none;
-      background: #f0eee6;
-    }
-
-    .journal-grid {
-      max-width: 1050px;
-      margin: 35px auto 0;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-
-    .post {
-      background: #fffdf8;
-      padding: 28px;
-      border-radius: 14px;
-    }
-
-    .post h3 {
-      color: #183b2b;
-    }
-
-    .post p {
-      color: #69726c;
-      font-family: Arial, sans-serif;
-    }
-
-    .contact {
-      display: grid;
-      grid-template-columns: 1.3fr .7fr;
-      gap: 50px;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 60px;
       align-items: center;
     }
 
-    .contact-box {
-      background: #dfe8dc;
-      padding: 30px;
-      border-radius: 15px;
+    .harvest-copy p {
+      color: #5e6962;
     }
 
-    .contact-box a {
-      color: #183b2b;
-      font-weight: bold;
+    .harvest-photo img {
+      height: 540px;
+      object-fit: cover;
+      border-radius: 4px 40px 4px 40px;
     }
+
+    /* -------------------------
+       COMING SOON
+    ------------------------- */
+
+    .coming {
+      background: #ccb99a;
+      color: var(--deep-forest);
+      text-align: center;
+    }
+
+    .coming-inner {
+      max-width: 850px;
+      margin: auto;
+    }
+
+    .coming h2 {
+      font-size: clamp(2.6rem, 5vw, 4.5rem);
+      margin-bottom: 22px;
+    }
+
+    .coming p {
+      font-size: 1.07rem;
+    }
+
+    /* -------------------------
+       JOURNAL
+    ------------------------- */
+
+    .journal-intro {
+      max-width: 760px;
+      margin-bottom: 40px;
+    }
+
+    .journal-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .journal-card {
+      background: var(--warm-white);
+      border: 1px solid #e3ddd2;
+      padding: 32px;
+      border-radius: 18px;
+    }
+
+    .journal-card h3 {
+      color: var(--forest);
+      font-size: 1.55rem;
+    }
+
+    .journal-card p {
+      color: #6a746d;
+      font-size: .92rem;
+    }
+
+    /* -------------------------
+       CONTACT
+    ------------------------- */
+
+    .contact {
+      background: var(--deep-forest);
+      color: white;
+    }
+
+    .contact-inner {
+      max-width: 850px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .contact h2 {
+      color: white;
+      font-size: clamp(2.7rem, 5vw, 4.6rem);
+    }
+
+    .contact p {
+      color: rgba(255,255,255,.8);
+      max-width: 650px;
+      margin: 0 auto 20px;
+    }
+
+    /* -------------------------
+       FOOTER
+    ------------------------- */
 
     footer {
-      background: #183b2b;
-      color: white;
+      background: #101b14;
+      color: #dcd9cf;
       padding: 30px 6%;
+    }
+
+    .footer-inner {
+      max-width: 1150px;
+      margin: auto;
       display: flex;
       justify-content: space-between;
+      gap: 25px;
       flex-wrap: wrap;
-      font-family: Arial, sans-serif;
       font-size: .85rem;
     }
 
-    @media (max-width: 800px) {
-      nav {
-        flex-direction: column;
-      }
+    /* -------------------------
+       MOBILE
+    ------------------------- */
 
-      nav a {
-        margin: 0 7px;
-      }
-
-      .intro,
-      .contact {
+    @media (max-width: 900px) {
+      .story-grid,
+      .groot-grid,
+      .build-grid,
+      .harvest-grid {
         grid-template-columns: 1fr;
       }
 
-      .cards,
-      .goods {
+      .cards {
         grid-template-columns: repeat(2, 1fr);
       }
 
       .journal-grid {
         grid-template-columns: 1fr;
       }
+
+      .groot-photo img,
+      .build-photo img,
+      .harvest-photo img {
+        height: auto;
+        max-height: 650px;
+      }
+
+      .story-image {
+        max-width: 600px;
+      }
     }
 
-    @media (max-width: 500px) {
-      .cards,
-      .goods {
+    @media (max-width: 700px) {
+      nav {
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        min-height: 82vh;
+        background-image:
+          linear-gradient(
+            rgba(15, 29, 20, .48),
+            rgba(15, 29, 20, .76)
+          ),
+          url("images/20260711_061003.jpg");
+
+        background-position: center center;
+      }
+
+      .hero-inner {
+        padding-bottom: 65px;
+      }
+
+      .hero h1 {
+        font-size: clamp(3rem, 15vw, 4.8rem);
+      }
+
+      .section,
+      .section-wide {
+        padding-top: 75px;
+        padding-bottom: 75px;
+      }
+
+      .cards {
         grid-template-columns: 1fr;
+      }
+
+      .story-grid,
+      .groot-grid,
+      .build-grid,
+      .harvest-grid {
+        gap: 38px;
+      }
+
+      .story-image img {
+        box-shadow: 10px 10px 0 var(--soft-sage);
       }
     }
   </style>
@@ -279,187 +599,437 @@
 
 <body>
 
-<header>
-  <nav>
-    <div class="logo">🌱 Groot's Garden</div>
-    <div>
-      <a href="#about">About</a>
-      <a href="#garden">Garden</a>
-      <a href="#goods">Goods</a>
-      <a href="#journal">Journal</a>
-      <a href="#contact">Contact</a>
-    </div>
-  </nav>
-</header>
+  <!-- =========================
+       HERO / HEADER
+  ========================== -->
 
-<main>
+  <header>
+    <nav>
+      <a class="brand" href="#top">Groots Garden</a>
 
-<section class="hero">
-  <div class="hero-content">
-    <div class="eyebrow">Maine • Garden • Homestead</div>
-    <h1>Growing a little piece of Maine.</h1>
-    <p>
-      Welcome to Groot's Garden — a small Maine homestead where we grow food,
-      raise our feathered friends, preserve what we can, and learn as we go.
-    </p>
-    <a class="button" href="#garden">Explore the Garden</a>
-  </div>
-</section>
+      <div class="nav-links">
+        <a href="#story">Our Story</a>
+        <a href="#groot">Meet Groot</a>
+        <a href="#garden">The Garden</a>
+        <a href="#journal">Journal</a>
+        <a href="#contact">Connect</a>
+      </div>
+    </nav>
+  </header>
 
-<section id="about">
-  <div class="intro">
-    <div>
-      <div class="eyebrow">Welcome</div>
-      <h2>Rooted in Maine.</h2>
-    </div>
+  <main id="top">
 
-    <div>
-      <p>
-        Groot's Garden is a growing homestead project focused on practical
-        gardening, preserving food, raising animals, and creating useful
-        homemade goods.
-      </p>
-      <p>
-        This website will grow right along with the garden — from seedlings
-        and harvests to recipes, projects, lessons learned, and future products.
-      </p>
-    </div>
-  </div>
-</section>
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="hero-content">
 
-<section id="garden" class="garden">
-  <div class="section-inner">
-    <div class="center">
-      <div class="eyebrow">What we're growing</div>
-      <h2>The Garden</h2>
-      <p>Follow along as the garden changes with the seasons.</p>
-    </div>
+          <span class="eyebrow">A Maine homestead in the making</span>
 
-    <div class="cards">
-      <div class="card">
-        <div class="card-icon">🥕</div>
-        <h3>Vegetables</h3>
-        <p>Seasonal vegetables, unusual varieties, and plenty of experiments.</p>
+          <h1>Groots Garden</h1>
+
+          <p>
+            Welcome to Groots Garden, where you can grow your garden with Groot and me
+            while we build a functional homestead from the ground up.
+          </p>
+
+          <a class="button" href="#story">Start Our Story</a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+         OUR STORY
+    ========================== -->
+
+    <section class="section" id="story">
+
+      <div class="story-grid">
+
+        <div class="story-image">
+          <img
+            src="images/20260711_060505.jpg"
+            alt="Tara and Groot together in the garden at Groots Garden"
+          >
+        </div>
+
+        <div class="story-copy">
+
+          <div class="section-label">Welcome to Groots Garden</div>
+
+          <h2 class="section-title">Come grow with us.</h2>
+
+          <p>
+            My name is Tara, and I moved to Maine over a decade ago with the hopes
+            and dreams of someday living on a functional homestead. After a couple
+            of “wrong turns” and A LOT of prayer, I’ve finally been given the
+            opportunity to make those dreams come true.
+          </p>
+
+          <p>
+            You have arrived at a phenomenal time, because you can join me and Groot
+            as <strong>I build this homestead from the ground up myself</strong> —
+            learning, creating, growing and improving the property one project at a time.
+          </p>
+
+          <p>
+            Along the way, I hope to share not only the journey, but eventually some
+            of what we produce here at Groots Garden with you and your homes.
+          </p>
+
+          <p>
+            The journey officially began in April 2026, so we are VERY much in the
+            beginning stages. That means you’re arriving at the perfect time to grab
+            a seat and enjoy the show!
+          </p>
+
+          <p>
+            I’ll be blogging the entire journey here, and you can follow along on
+            social media for all things Groots Garden — plus the miscellaneous
+            projects we inevitably have going on around the property.
+          </p>
+
+        </div>
+
       </div>
 
-      <div class="card">
-        <div class="card-icon">🌿</div>
-        <h3>Herbs</h3>
-        <p>Fresh herbs for cooking, drying, tea, and future handmade goods.</p>
+    </section>
+
+    <!-- =========================
+         QUOTE
+    ========================== -->
+
+    <section class="quote-strip">
+      <p>
+        “Building it ourselves. Learning as we go. Growing a little more every season.”
+      </p>
+
+      <span>Groots Garden • Maine</span>
+    </section>
+
+    <!-- =========================
+         MEET GROOT
+    ========================== -->
+
+    <section class="section-wide groot-section" id="groot">
+
+      <div class="groot-grid">
+
+        <div class="groot-copy">
+
+          <div class="section-label">The namesake</div>
+
+          <h2 class="section-title">Meet Groot.</h2>
+
+          <p>
+            Groots Garden gets its name from the property’s resident duck, my
+            right-hand man, Groot.
+          </p>
+
+          <p>
+            Groot makes sure to involve himself in just about every part of our
+            daily lives — and growing vegetables is certainly no exception.
+            He considers himself something of a master gardener.
+          </p>
+
+          <p>
+            You’ll see plenty of him around here as he supervises projects,
+            investigates the garden and generally makes himself part of whatever
+            I happen to be working on.
+          </p>
+
+          <p>
+            This may technically be my homestead project, but Groot would probably
+            tell you otherwise.
+          </p>
+
+        </div>
+
+        <div class="groot-photo">
+          <img
+            src="images/20260731_055538.jpg"
+            alt="Groot the duck, namesake of Groots Garden"
+          >
+        </div>
+
       </div>
 
-      <div class="card">
-        <div class="card-icon">🫐</div>
-        <h3>Fruit & Berries</h3>
-        <p>Perennial plants for jams, jellies, preserves, and winter projects.</p>
+    </section>
+
+    <!-- =========================
+         BUILDING THE HOMESTEAD
+    ========================== -->
+
+    <section class="section" id="garden">
+
+      <div class="build-grid">
+
+        <div class="build-photo">
+          <img
+            src="images/20260820_074232.jpg"
+            alt="The garden at Groots Garden while being built and improved"
+          >
+        </div>
+
+        <div class="build-copy">
+
+          <div class="section-label">From the ground up</div>
+
+          <h2 class="section-title">You’re here at the beginning.</h2>
+
+          <p>
+            This isn’t a finished homestead with years of polished systems already
+            in place. We’re building it now.
+          </p>
+
+          <p>
+            Beds are being rebuilt. New plants are going in. Projects are being
+            tried, changed, improved and occasionally started over completely.
+          </p>
+
+          <p>
+            I want Groots Garden to document the real process — what works,
+            what doesn’t, what I learn and what I would do differently next time.
+          </p>
+
+          <p>
+            If you’re building your own garden, dreaming about a homestead or simply
+            enjoy seeing one come together, you’re welcome to learn right alongside us.
+          </p>
+
+        </div>
+
       </div>
 
-      <div class="card">
-        <div class="card-icon">🌱</div>
-        <h3>Seedlings</h3>
-        <p>Future plants grown with Maine gardens in mind.</p>
+    </section>
+
+    <!-- =========================
+         WHAT WE'RE GROWING
+    ========================== -->
+
+    <section class="section-wide growing">
+
+      <div class="section" style="padding-top:0; padding-bottom:0;">
+
+        <div class="growing-header">
+
+          <div class="section-label">Growing at Groots Garden</div>
+
+          <h2 class="section-title">A little more every season.</h2>
+
+          <p>
+            Groots Garden is still growing into what it will eventually become.
+            These are some of the areas we’re developing along the way.
+          </p>
+
+        </div>
+
+        <div class="cards">
+
+          <div class="card">
+            <div class="card-number">01</div>
+            <h3>Vegetables</h3>
+            <p>
+              Everyday favorites, unusual varieties and plenty of garden experiments.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="card-number">02</div>
+            <h3>Herbs</h3>
+            <p>
+              Herbs for cooking, drying, teas, preservation and future handmade goods.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="card-number">03</div>
+            <h3>Seedlings</h3>
+            <p>
+              Plants grown with Maine gardens in mind, with our first sales planned
+              for Spring 2027.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="card-number">04</div>
+            <h3>Homestead Goods</h3>
+            <p>
+              Future preserved foods, dried goods, crafts and whatever else this
+              property teaches us to create.
+            </p>
+          </div>
+
+        </div>
+
       </div>
-    </div>
-  </div>
-</section>
 
-<section id="goods">
-  <div class="center">
-    <div class="eyebrow">Made from the harvest</div>
-    <h2>Groot's Garden Goods</h2>
-    <p>This can become your shop as your products are ready.</p>
-  </div>
+    </section>
 
-  <div class="goods">
-    <div>
-      <span>🌿</span>
-      <strong>Dried Herbs</strong>
-      <small>Coming soon</small>
-    </div>
+    <!-- =========================
+         HARVEST / FUTURE GOODS
+    ========================== -->
 
-    <div>
-      <span>🥣</span>
-      <strong>Soup Mixes</strong>
-      <small>Coming soon</small>
-    </div>
+    <section class="section">
 
-    <div>
-      <span>🍓</span>
-      <strong>Jams & Jellies</strong>
-      <small>Coming soon</small>
-    </div>
+      <div class="harvest-grid">
 
-    <div>
-      <span>🌱</span>
-      <strong>Seedlings</strong>
-      <small>Seasonal</small>
-    </div>
-  </div>
-</section>
+        <div class="harvest-copy">
 
-<section id="journal" class="journal">
-  <div class="center">
-    <div class="eyebrow">From the homestead</div>
-    <h2>The Garden Journal</h2>
-    <p>Stories, projects, harvests, experiments, and lessons learned.</p>
-  </div>
+          <div class="section-label">From our garden to yours</div>
 
-  <div class="journal-grid">
-    <article class="post">
-      <h3>What's growing this season</h3>
-      <p>
-        A place to document the garden from first planting to final harvest.
-      </p>
-    </article>
+          <h2 class="section-title">Growing more than vegetables.</h2>
 
-    <article class="post">
-      <h3>Projects around the homestead</h3>
-      <p>
-        Low-cost DIY projects, garden improvements, animal spaces, and more.
-      </p>
-    </article>
+          <p>
+            As I learn and master more of the crafts that come with homesteading —
+            gardening, food preservation and creating with what the property has
+            to offer — the inventory here will grow right along with me.
+          </p>
 
-    <article class="post">
-      <h3>From harvest to pantry</h3>
-      <p>
-        Drying, preserving, recipes, and ways to make the harvest last.
-      </p>
-    </article>
-  </div>
-</section>
+          <p>
+            The goal is to eventually share pieces of Groots Garden with you:
+            seedlings, garden goods and other products created from what we grow,
+            preserve and make here on the property.
+          </p>
 
-<section id="contact">
-  <div class="contact">
-    <div>
-      <div class="eyebrow">Come say hello</div>
-      <h2>Follow Groot's Garden</h2>
-      <p>
-        More garden updates, homestead projects, products, and stories will
-        be added as Groot's Garden grows.
-      </p>
-    </div>
+          <p>
+            There is plenty more to come.
+          </p>
 
-    <div class="contact-box">
-      <strong>Business Contact</strong>
-      <p>
-        <a href="mailto:hello@grootsgarden.com">
-          tarat@grootsgarden.com
+        </div>
+
+        <div class="harvest-photo">
+          <img
+            src="images/20260807_191822.jpg"
+            alt="Tara holding a freshly harvested zucchini from the garden"
+          >
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- =========================
+         SPRING 2027
+    ========================== -->
+
+    <section class="section-wide coming">
+
+      <div class="coming-inner">
+
+        <div class="section-label" style="color:#62492f;">
+          Coming Spring 2027
+        </div>
+
+        <h2>Grow your garden with Groot and me.</h2>
+
+        <p>
+          I plan to have seedlings available for sale beginning Spring 2027.
+          There will be much more information to come, but stick around for the
+          opportunity to grow your vegetable and herb garden right alongside us.
+        </p>
+
+        <a class="button button-dark" href="#journal">
+          Follow the Journey
         </a>
-      </p>
-      <small>
-        We can replace this with your final business email later.
-      </small>
+
+      </div>
+
+    </section>
+
+    <!-- =========================
+         JOURNAL
+    ========================== -->
+
+    <section class="section" id="journal">
+
+      <div class="journal-intro">
+
+        <div class="section-label">The Groots Garden Journal</div>
+
+        <h2 class="section-title">The good, the messy and everything in between.</h2>
+
+        <p>
+          The journal will document the entire process of turning this property
+          into a functioning homestead — garden projects, harvests, animals,
+          mistakes, successes and whatever else happens along the way.
+        </p>
+
+      </div>
+
+      <div class="journal-grid">
+
+        <article class="journal-card">
+          <h3>Building the Homestead</h3>
+          <p>
+            Follow each project as the property changes from where we started
+            into the homestead we’re working toward.
+          </p>
+        </article>
+
+        <article class="journal-card">
+          <h3>In the Garden</h3>
+          <p>
+            What we’re planting, growing, harvesting and learning through the
+            Maine seasons.
+          </p>
+        </article>
+
+        <article class="journal-card">
+          <h3>Life with Groot</h3>
+          <p>
+            Garden supervision, duck opinions and the everyday adventures of
+            Groots Garden’s self-appointed manager.
+          </p>
+        </article>
+
+      </div>
+
+    </section>
+
+    <!-- =========================
+         CONTACT
+    ========================== -->
+
+    <section class="section-wide contact" id="contact">
+
+      <div class="contact-inner">
+
+        <div class="section-label" style="color:#cdbd9b;">
+          Follow along
+        </div>
+
+        <h2>We’re just getting started.</h2>
+
+        <p>
+          Follow Groots Garden as we build, grow, learn and figure this whole
+          homesteading thing out one project at a time.
+        </p>
+
+        <p>
+          Social media links and additional ways to connect will be added here
+          as the website grows.
+        </p>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer>
+
+    <div class="footer-inner">
+
+      <strong>Groots Garden</strong>
+
+      <span>Growing a Maine homestead from the ground up.</span>
+
+      <span>© 2026 Groots Garden</span>
+
     </div>
-  </div>
-</section>
 
-</main>
-
-<footer>
-  <strong>🌱 Groot's Garden</strong>
-  <span>Growing, preserving & learning in Maine.</span>
-  <span>© 2026 Groot's Garden</span>
-</footer>
+  </footer>
 
 </body>
 </html>
