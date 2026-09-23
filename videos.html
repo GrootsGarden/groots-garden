@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Groots Garden | Growing a Maine Homestead from the Ground Up</title>
+
+  <meta
+    name="description"
+    content="Follow Tara and Groot as they build Groots Garden, a Maine homestead growing vegetables, herbs, seedlings, handmade goods, and plenty of lessons along the way."
+  >
+
+  <!-- Soft, organic fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+    :root {
+      --forest: #24392c;
+      --deep-forest: #17271d;
+      --sage: #7f9279;
+      --soft-sage: #dfe6d9;
+      --cream: #f6f1e6;
+      --warm-white: #fffdf8;
+      --clay: #9a6d4b;
+      --brown: #654c39;
+      --gold: #c1a36e;
+      --text: #324137;
+      --muted: #68736b;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--cream);
+      color: var(--text);
+      font-family: "DM Sans", Arial, sans-serif;
+      line-height: 1.75;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: "Fraunces", Georgia, serif;
+      font-weight: 600;
+      line-height: 1.08;
+      margin-top: 0;
+    }
+
+    p {
+      margin-top: 0;
+    }
+
+    /* -------------------------
+       NAVIGATION
+    ------------------------- */
+
+    header {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 20;
+    }
+
+    nav {
+      max-width: 1200px;
+      margin: auto;
+      padding: 24px 6%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+
+    .brand {
+      color: white;
+      text-decoration: none;
+      font-family: "Fraunces", Georgia, serif;
+      font-size: 1.45rem;
+      font-weight: 600;
+      letter-spacing: .2px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-size: .88rem;
+      font-weight: 500;
+      letter-spacing: .5px;
+    }
+
+    .nav-links a:hover {
+      opacity: .75;
+    }
+
+    /* -------------------------
+       HERO
+    ------------------------- */
+
+    .hero {
+      min-height: 88vh;
+      display: flex;
+      align-items: end;
+      position: relative;
+      color: white;
+      background-image:
+        linear-gradient(
+          90deg,
+          rgba(18, 34, 24, .78) 0%,
+          rgba(18, 34, 24, .55) 42%,
+          rgba(18, 34, 24, .18) 72%,
+          rgba(18, 34, 24, .20) 100%
+        ),
+        url("images/20260711_061003.jpg");
+
+      background-size: cover;
+      background-position: center 43%;
+    }
+
+    .hero-inner {
+      width: 100%;
+      max-width: 1200px;
+      margin: auto;
+      padding: 170px 6% 95px;
+    }
+
+    .hero-content {
+      max-width: 680px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 15px;
+      color: #e7dcc3;
+      font-size: .78rem;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      font-size: clamp(3.4rem, 8vw, 6.8rem);
+      margin-bottom: 22px;
+      color: white;
+      letter-spacing: -2px;
+    }
+
+    .hero p {
+      max-width: 600px;
+      font-size: 1.15rem;
+      color: rgba(255,255,255,.92);
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 22px;
+      padding: 13px 24px;
+      border-radius: 100px;
+      background: var(--cream);
+      color: var(--deep-forest);
+      text-decoration: none;
+      font-weight: 600;
+      transition: .2s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      background: white;
+    }
+
+    .button-dark {
+      background: var(--forest);
+      color: white;
+    }
+
+    /* -------------------------
+       GENERAL LAYOUT
+    ------------------------- */
+
+    .section {
+      max-width: 1150px;
+      margin: auto;
+      padding: 100px 6%;
+    }
+
+    .section-wide {
+      max-width: none;
+      padding: 100px 6%;
+    }
+
+    .section-label {
+      color: var(--clay);
+      font-size: .78rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-size: clamp(2.7rem, 5vw, 4.3rem);
+      color: var(--forest);
+      margin-bottom: 28px;
+    }
+
+    /* -------------------------
+       STORY
+    ------------------------- */
+
+    .story-grid {
+      display: grid;
+      grid-template-columns: .85fr 1.15fr;
+      gap: 75px;
+      align-items: center;
+    }
+
+    .story-image {
+      position: relative;
+    }
+
+    .story-image img {
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      border-radius: 4px 45px 4px 45px;
+      box-shadow: 18px 18px 0 var(--soft-sage);
+    }
+
+    .story-copy p {
+      font-size: 1.04rem;
+      color: #536158;
+    }
+
+    .story-copy strong {
+      color: var(--forest);
+    }
+
+    /* -------------------------
+       QUOTE STRIP
+    ------------------------- */
+
+    .quote-strip {
+      background: var(--forest);
+      color: white;
+      text-align: center;
+      padding: 70px 8%;
+    }
+
+    .quote-strip p {
+      max-width: 850px;
+      margin: auto;
+      font-family: "Fraunces", Georgia, serif;
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      line-height: 1.25;
+    }
+
+    .quote-strip span {
+      display: block;
+      margin-top: 18px;
+      color: #d4c7aa;
+      font-family: "DM Sans", Arial, sans-serif;
+      font-size: .8rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    /* -------------------------
+       MEET GROOT
+    ------------------------- */
+
+    .groot-section {
+      background: #e8ecdf;
+    }
+
+    .groot-grid {
+      max-width: 1150px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .groot-photo img {
+      height: 580px;
+      object-fit: cover;
+      object-position: center 35%;
+      border-radius: 50% 50% 8px 8px / 18% 18% 8px 8px;
+    }
+
+    .groot-copy p {
+      color: #566258;
+      font-size: 1.04rem;
+    }
+
+    /* -------------------------
+       BUILDING THE HOMESTEAD
+    ------------------------- */
+
+    .build-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 45px;
+      align-items: center;
+    }
+
+    .build-photo img {
+      height: 470px;
+      object-fit: cover;
+      border-radius: 30px 4px 30px 4px;
+    }
+
+    .build-copy {
+      padding: 20px;
+    }
+
+    .build-copy p {
+      color: #5e6962;
+    }
+
+    /* -------------------------
+       WHAT'S GROWING
+    ------------------------- */
+
+    .growing {
+      background: var(--warm-white);
+    }
+
+    .growing-header {
+      max-width: 760px;
+      margin-bottom: 45px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      background: var(--cream);
+      padding: 28px;
+      border: 1px solid #e4ddcf;
+      border-radius: 18px;
+    }
+
+    .card-number {
+      color: var(--clay);
+      font-family: "Fraunces", serif;
+      font-size: 1.3rem;
+    }
+
+    .card h3 {
+      color: var(--forest);
+      margin: 12px 0 8px;
+      font-size: 1.5rem;
+    }
+
+    .card p {
+      color: #68736b;
+      font-size: .92rem;
+      margin-bottom: 0;
+    }
+
+    /* -------------------------
+       HARVEST
+    ------------------------- */
+
+    .harvest-grid {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .harvest-copy p {
+      color: #5e6962;
+    }
+
+    .harvest-photo img {
+      height: 540px;
+      object-fit: cover;
+      border-radius: 4px 40px 4px 40px;
+    }
+
+    /* -------------------------
+       COMING SOON
+    ------------------------- */
+
+    .coming {
+      background: #ccb99a;
+      color: var(--deep-forest);
+      text-align: center;
+    }
+
+    .coming-inner {
+      max-width: 850px;
+      margin: auto;
+    }
+
+    .coming h2 {
+      font-size: clamp(2.6rem, 5vw, 4.5rem);
+      margin-bottom: 22px;
+    }
+
+    .coming p {
+      font-size: 1.07rem;
+    }
+
+    /* -------------------------
+       JOURNAL
+    ------------------------- */
+
+    .journal-intro {
+      max-width: 760px;
+      margin-bottom: 40px;
+    }
+
+    .journal-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .journal-card {
+      background: var(--warm-white);
+      border: 1px solid #e3ddd2;
+      padding: 32px;
+      border-radius: 18px;
+    }
+
+    .journal-card h3 {
+      color: var(--forest);
+      font-size: 1.55rem;
+    }
+
+    .journal-card p {
+      color: #6a746d;
+      font-size: .92rem;
+    }
+
+    /* -------------------------
+       CONTACT
+    ------------------------- */
+
+    .contact {
+      background: var(--deep-forest);
+      color: white;
+    }
+
+    .contact-inner {
+      max-width: 850px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .contact h2 {
+      color: white;
+      font-size: clamp(2.7rem, 5vw, 4.6rem);
+    }
+
+    .contact p {
+      color: rgba(255,255,255,.8);
+      max-width: 650px;
+      margin: 0 auto 20px;
+    }
+
+    /* -------------------------
+       FOOTER
+    ------------------------- */
+
+    footer {
+      background: #101b14;
+      color: #dcd9cf;
+      padding: 30px 6%;
+    }
+
+    .footer-inner {
+      max-width: 1150px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 25px;
+      flex-wrap: wrap;
+      font-size: .85rem;
+    }
+
+    /* -------------------------
+       MOBILE
+    ------------------------- */
+
+    @media (max-width: 900px) {
+      .story-grid,
+      .groot-grid,
+      .build-grid,
+      .harvest-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .cards {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .journal-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .groot-photo img,
+      .build-photo img,
+      .harvest-photo img {
+        height: auto;
+        max-height: 650px;
+      }
+
+      .story-image {
+        max-width: 600px;
+      }
+    }
+
+    @media (max-width: 700px) {
+      nav {
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        min-height: 82vh;
+        background-image:
+          linear-gradient(
+            rgba(15, 29, 20, .48),
+            rgba(15, 29, 20, .76)
+          ),
+          url("images/20260711_061003.jpg");
+
+        background-position: center center;
+      }
+
+      .hero-inner {
+        padding-bottom: 65px;
+      }
+
+      .hero h1 {
+        font-size: clamp(3rem, 15vw, 4.8rem);
+      }
+
+      .section,
+      .section-wide {
+        padding-top: 75px;
+        padding-bottom: 75px;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .story-grid,
+      .groot-grid,
+      .build-grid,
+      .harvest-grid {
+        gap: 38px;
+      }
+
+      .story-image img {
+        box-shadow: 10px 10px 0 var(--soft-sage);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================
+       HERO / HEADER
+  ========================== -->
+
+  <header>
+    <nav>
+      <a class="brand" href="#top">Groots Garden</a>
+
+      <div class="nav-links">
+        <a href="#story">Our Story</a>
+        <a href="#groot">Meet Groot</a>
+        <a href="#garden">The Garden</a>
+        <a href="#journal">Journal</a>
+        <a href="#contact">Connect</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top">
+<section class="section">
+  <h1>Check out what is happening around the Homestead</h1>
+
+  <div style="max-width: 1000px; margin: 30px auto;">
+    <div style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 18px;">
+      <iframe
+        src="https://www.youtube.com/embed?listType=playlist&amp;list=PLFYysS3-TyFs"
+        title="Groots Garden Videos"
+        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </div>
+</section>
+      </main>
+
+  <footer>
+
+    <div class="footer-inner">
+
+      <strong>Groots Garden</strong>
+
+      <span>Growing a Maine homestead from the ground up.</span>
+
+      <span>© 2026 Groots Garden</span>
+
+    </div>
+
+  </footer>
+
+</body>
+</html>
