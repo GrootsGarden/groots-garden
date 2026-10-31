@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Inventory | Groots Garden</title>
+
+  <meta
+    name="description"
+    content="Explore what's growing at Groots Garden. Our first seedling sales are planned for Spring 2027."
+  >
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+    :root {
+      --forest: #24392c;
+      --deep-forest: #17271d;
+      --soft-sage: #dfe6d9;
+      --cream: #f6f1e6;
+      --warm-white: #fffdf8;
+      --clay: #9a6d4b;
+      --text: #324137;
+      --muted: #68736b;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--cream);
+      color: var(--text);
+      font-family: "DM Sans", Arial, sans-serif;
+      line-height: 1.75;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    a {
+      color: inherit;
+      text-underline-offset: .2em;
+    }
+
+    a:focus-visible {
+      outline: 2px solid currentColor;
+      outline-offset: 5px;
+    }
+
+    h1,
+    h2 {
+      font-family: "Fraunces", Georgia, serif;
+      font-weight: 600;
+      line-height: 1.08;
+      margin-top: 0;
+      color: var(--forest);
+    }
+
+    p {
+      margin-top: 0;
+    }
+
+    /* NAVIGATION */
+
+    nav {
+      max-width: 1200px;
+      margin: auto;
+      padding: 24px 6%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+
+    .brand {
+      color: #294936;
+      text-decoration: none;
+      font-family: "Fraunces", Georgia, serif;
+      font-size: 1.45rem;
+      font-weight: 600;
+      letter-spacing: .2px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: #294936;
+      text-decoration: none;
+      font-size: .88rem;
+      font-weight: 500;
+      letter-spacing: .5px;
+    }
+
+    .nav-links a:hover,
+    .nav-links a[aria-current="page"] {
+      text-decoration: underline;
+    }
+
+    /* PAGE CONTENT */
+
+    main {
+      flex: 1;
+      width: 100%;
+    }
+
+    .section {
+      max-width: 1150px;
+      margin: auto;
+      padding: 65px 6% 100px;
+    }
+
+    .section-label {
+      color: var(--clay);
+      font-size: .78rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      font-size: clamp(2.7rem, 5vw, 4.3rem);
+      margin-bottom: 24px;
+    }
+
+    .intro {
+      max-width: 760px;
+      margin-bottom: 40px;
+    }
+
+    .intro p {
+      font-size: 1.04rem;
+    }
+
+    /* INVENTORY */
+
+    .inventory-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+      gap: 24px;
+    }
+
+    .inventory-card {
+      background: var(--warm-white);
+      border: 1px solid #e3ddd2;
+      padding: clamp(24px, 4vw, 40px);
+      border-radius: 18px;
+    }
+
+    .status {
+      display: inline-block;
+      background: var(--soft-sage);
+      color: var(--deep-forest);
+      padding: 6px 14px;
+      border-radius: 100px;
+      font-size: .8rem;
+      font-weight: 600;
+      margin-bottom: 22px;
+    }
+
+    .inventory-card h2 {
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      margin-bottom: 20px;
+    }
+
+    .inventory-card p {
+      max-width: 700px;
+      color: var(--muted);
+    }
+
+    .inventory-card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .page-links {
+      margin-top: 35px;
+      display: flex;
+      gap: 16px 28px;
+      flex-wrap: wrap;
+      font-weight: 600;
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: #101b14;
+      color: #dcd9cf;
+      padding: 30px 6%;
+    }
+
+    .footer-inner {
+      max-width: 1150px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 25px;
+      flex-wrap: wrap;
+      font-size: .85rem;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 700px) {
+      nav {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 14px;
+      }
+
+      .nav-links {
+        gap: 12px 20px;
+      }
+
+      .section {
+        padding-top: 40px;
+        padding-bottom: 75px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <nav aria-label="Main navigation">
+      <a class="brand" href="index.html">Groots Garden</a>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="videos.html">Videos</a>
+        <a href="inventory.html" aria-current="page">Inventory</a>
+        <a href="index.html#contact">Connect</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="section" aria-labelledby="inventory-title">
+
+      <div class="intro">
+        <div class="section-label">Growing at Groots Garden</div>
+
+        <h1 id="inventory-title">Check out our inventory.</h1>
+
+        <p>
+          Grow your garden with Groot and me! Our first seedling sales
+          are planned for Spring 2027.
+        </p>
+      </div>
+
+      <div class="inventory-grid">
+
+        <!-- SEEDLINGS -->
+        <article class="inventory-card">
+          <span class="status">Coming Spring 2027</span>
+
+          <h2>Seedlings</h2>
+
+          <p>
+            I plan to have vegetable and herb seedlings available for sale
+            beginning Spring 2027.
+          </p>
+
+          <p>
+            Specific varieties, prices and availability will be added here
+            as we get closer to the growing season.
+          </p>
+
+          <p>
+            There are no items available to purchase just yet.
+            Check back to see what’s growing!
+          </p>
+        </article>
+
+      </div>
+
+      <div class="page-links">
+        <a href="index.html#contact">Connect with us</a>
+        <a href="videos.html">Follow the homestead journey</a>
+      </div>
+
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <strong>Groots Garden</strong>
+      <span>Growing a Maine homestead from the ground up.</span>
+      <span>© 2026 Groots Garden</span>
+    </div>
+  </footer>
+
+</body>
+</html>
