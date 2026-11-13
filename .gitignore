@@ -1,0 +1,29 @@
+
+# Groots Garden - Git Ignore
+
+# Windows and Mac system files
+Thumbs.db
+.DS_Store
+desktop.ini
+
+# Temporary and backup files
+*.tmp
+*.bak
+*.log
+*~
+
+# Private environment files
+.env
+.env.*
+!.env.example
+
+# Private keys
+*.pem
+*.key
+
+# Editor settings
+.vscode/
+.idea/
+
+# Dependencies if added later
+node_modules/
